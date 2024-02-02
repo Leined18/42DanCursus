@@ -1,27 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstclear.c                                        :+:      :+:    :+:   */
+/*   ft_lstclear.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: danpalac <danpalac@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/02/02 13:48:12 by danpalac          #+#    #+#             */
-/*   Updated: 2024/02/02 14:04:03 by danpalac         ###   ########.fr       */
+/*   Created: 2024/02/02 16:03:11 by danpalac          #+#    #+#             */
+/*   Updated: 2024/02/02 16:44:13 by danpalac         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void ft_lstclear(t_list **lst, void (*del)(void*))
+void	ft_lstclear(t_list **lst, void (*del)(void*))
 {
+	t_list	*head;
 	t_list	*temp;
 
-	temp = *lst;
-	del(temp);
-	temp->next = NULL;
-	free(temp);
+	if (!lst || !*lst)
+		return ;
+	head = *lst;
+	while (head)
+	{
+		temp = head;
+		head = head->next;
+		if (del)
+			del(temp->content);
+		free(temp);
+	}
+	*lst = NULL;
 }
-
+/*
 void free_content(void *content)
 {
     free(content);
@@ -63,4 +72,4 @@ int main()
     }
 
     return 0;
-}
+}*/

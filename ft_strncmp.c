@@ -6,11 +6,11 @@
 /*   By: danpalac <danpalac@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/15 10:35:01 by danpalac          #+#    #+#             */
-/*   Updated: 2024/01/15 12:32:38 by danpalac         ###   ########.fr       */
+/*   Updated: 2024/02/02 16:51:48 by danpalac         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
 #include "libft.h"
-#include <stdio.h>
 
 int	ft_strncmp(const char *s1, const char *s2, size_t n)
 {
