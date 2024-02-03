@@ -14,9 +14,6 @@
 
 void	ft_putstr_fd(char *s, int fd)
 {
-	unsigned int	i;
-
-	i = 0;
 	while (*s)
 	{
 		ft_putchar_fd(*s, fd);
