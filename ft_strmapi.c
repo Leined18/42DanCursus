@@ -6,7 +6,7 @@
 /*   By: danpalac <danpalac@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/25 09:01:01 by danpalac          #+#    #+#             */
-/*   Updated: 2024/02/08 11:45:46 by danpalac         ###   ########.fr       */
+/*   Updated: 2024/02/08 14:31:25 by danpalac         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 
 	if (!s || !f)
 		return (NULL);
-	len = strlen(s);
+	len = ft_strlen(s);
 	result = (char *)malloc(len + 1);
 	if (!result)
 		return (NULL);

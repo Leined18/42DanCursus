@@ -6,7 +6,7 @@
 /*   By: danpalac <danpalac@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/12 13:30:41 by danpalac          #+#    #+#             */
-/*   Updated: 2024/01/12 17:03:49 by danpalac         ###   ########.fr       */
+/*   Updated: 2024/02/08 14:28:49 by danpalac         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ size_t	ft_strlcat(char *restrict dst, const char *restrict src, size_t dstsize)
 	if (dst_len < dstsize)
 		total_len = dst_len + ft_strlen(s);
 	else
-		return (dstsize + strlen(s));
+		return (dstsize + ft_strlen(s));
 	while (*s && (dst_len + 1) < dstsize)
 	{
 		*(dst + dst_len) = *s++;

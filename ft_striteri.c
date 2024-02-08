@@ -6,7 +6,7 @@
 /*   By: danpalac <danpalac@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/25 09:01:58 by danpalac          #+#    #+#             */
-/*   Updated: 2024/01/25 09:31:42 by danpalac         ###   ########.fr       */
+/*   Updated: 2024/02/08 14:27:37 by danpalac         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ void	ft_striteri(char *s, void (*f)(unsigned int, char *))
 	size_t			len;
 	unsigned int	i;
 
-	len = strlen(s);
+	len = ft_strlen(s);
 	i = 0;
 	while (i < len)
 	{
