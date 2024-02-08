@@ -6,22 +6,23 @@
 /*   By: danpalac <danpalac@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/18 11:03:56 by danpalac          #+#    #+#             */
-/*   Updated: 2024/01/19 09:36:53 by danpalac         ###   ########.fr       */
+/*   Updated: 2024/02/08 11:59:57 by danpalac         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char *ft_strcpy(char *dest, const char *src)
+static void	ft_strcpy(char *ptr, const char *s1)
 {
-	if (!src)
-		return (dest);
-	if (!dest)
-		return (NULL);
-	while (*src)
-		*dest++ = *src++;
-	*dest = '\0';
-	return dest;
+	int	i;
+
+	i = 0;
+	while (s1[i])
+	{
+		ptr[i] = s1[i];
+		i++;
+	}
+	ptr[i] = '\0';
 }
 
 char	*ft_strdup(const char *s1)

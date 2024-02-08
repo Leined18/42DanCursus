@@ -6,7 +6,7 @@
 /*   By: danpalac <danpalac@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/10 11:43:28 by danpalac          #+#    #+#             */
-/*   Updated: 2024/01/10 12:23:48 by danpalac         ###   ########.fr       */
+/*   Updated: 2024/02/08 10:54:38 by danpalac         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,7 @@ void	*ft_memmove(void *dst, const void *src, size_t len)
 	const unsigned char	*csrc;
 
 	if (!src && !dst)
-		return (0);
+		return (NULL);
 	cdst = (unsigned char *)dst;
 	csrc = (const unsigned char *)src;
 	ft_make_copy(cdst, csrc, len);

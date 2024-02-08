@@ -6,9 +6,11 @@
 /*   By: danpalac <danpalac@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/02 16:45:45 by danpalac          #+#    #+#             */
-/*   Updated: 2024/02/02 16:59:47 by danpalac         ###   ########.fr       */
+/*   Updated: 2024/02/08 14:11:53 by danpalac         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "libft.h"
 
 void	ft_lstiter(t_list *lst, void (*f)(void *))
 {
@@ -19,12 +21,12 @@ void	ft_lstiter(t_list *lst, void (*f)(void *))
 	i = 0;
 	while (lst)
 	{
+		f(lst->content);
 		lst = lst->next;
-		f(lst[i]);
-		i++;
 	}
 }
 
+/*
 void print_data(void *data)
 {
     printf("%s\n", (char *)data);
@@ -48,4 +50,4 @@ int main() {
     ft_lstclear(&lst, free);
 
     return 0;
-}
+}*/

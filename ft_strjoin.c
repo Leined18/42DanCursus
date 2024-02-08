@@ -6,13 +6,13 @@
 /*   By: danpalac <danpalac@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/19 10:56:53 by danpalac          #+#    #+#             */
-/*   Updated: 2024/01/19 11:24:50 by danpalac         ###   ########.fr       */
+/*   Updated: 2024/02/08 11:52:25 by danpalac         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char *ft_strcpy(char *dest, const char *src)
+static char	*ft_strcpy(char *dest, const char *src)
 {
 	if (!src)
 		return (dest);
@@ -21,10 +21,10 @@ char *ft_strcpy(char *dest, const char *src)
 	while (*src)
 		*dest++ = *src++;
 	*dest = '\0';
-	return dest;
+	return (dest);
 }
 
-char	*ft_strcat(char *dest, char *src)
+static char	*ft_strcat(char *dest, const char *src)
 {
 	char	*ptr;
 
@@ -50,8 +50,8 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	ptr = (char *)malloc((total_len + 1) * sizeof(char));
 	if (ptr == NULL)
 		return (NULL);
-	ft_strcpy(ptr, s1);
-	ft_strcat(ptr, s2);
+	ft_strcpy(ptr, (char *)s1);
+	ft_strcat(ptr, (char *)s2);
 	return (ptr);
 }
 /*
