@@ -6,7 +6,7 @@
 /*   By: danpalac <danpalac@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/02 16:45:45 by danpalac          #+#    #+#             */
-/*   Updated: 2024/02/08 14:11:53 by danpalac         ###   ########.fr       */
+/*   Updated: 2024/02/09 10:43:03 by danpalac         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ void	ft_lstiter(t_list *lst, void (*f)(void *))
 {
 	int	i;
 
-	if (!lst)
+	if (!lst || !f)
 		return ;
 	i = 0;
 	while (lst)

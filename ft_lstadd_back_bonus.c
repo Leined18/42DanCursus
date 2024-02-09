@@ -6,7 +6,7 @@
 /*   By: danpalac <danpalac@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/02 12:44:00 by danpalac          #+#    #+#             */
-/*   Updated: 2024/02/08 14:38:19 by danpalac         ###   ########.fr       */
+/*   Updated: 2024/02/09 10:46:23 by danpalac         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ void	ft_lstadd_back(t_list **lst, t_list *new)
 	if (!new || !lst)
 		return ;
 	new->next = NULL;
-	if (!*lst)
+	if (!(*lst))
 	{
 		*lst = new;
 		return ;
