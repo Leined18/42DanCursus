@@ -6,7 +6,7 @@
 /*   By: danpalac <danpalac@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/08 15:28:52 by danpalac          #+#    #+#             */
-/*   Updated: 2024/02/08 11:38:00 by danpalac         ###   ########.fr       */
+/*   Updated: 2024/02/23 10:32:10 by danpalac         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 int	ft_isprint(int c)
 {
-	if (c >= 32 && c <= 126)
+	if (c >= ' ' && c <= '~')
 		return (1);
 	else
 		return (0);

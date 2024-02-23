@@ -6,7 +6,7 @@
 /*   By: danpalac <danpalac@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/22 12:26:06 by danpalac          #+#    #+#             */
-/*   Updated: 2024/02/08 11:38:20 by danpalac         ###   ########.fr       */
+/*   Updated: 2024/02/23 10:41:06 by danpalac         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,7 +71,7 @@ char	*ft_itoa(int n)
 		nbr /= 10;
 	}
 	if (sign)
-		*(str) = 45;
+		*(str) = '-';
 	return (str);
 }
 
