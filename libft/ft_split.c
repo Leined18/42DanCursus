@@ -6,7 +6,7 @@
 /*   By: danpalac <danpalac@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/22 09:47:33 by danpalac          #+#    #+#             */
-/*   Updated: 2024/02/13 11:07:00 by danpalac         ###   ########.fr       */
+/*   Updated: 2024/02/26 12:16:41 by danpalac         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -103,7 +103,7 @@ void print_string_array(char **arr)
 	if (!arr)
 	{
 		printf("Array is NULL\n");
-		return;
+		return ;
 	}
 
 	for (int i = 0; arr[i]; i++)
@@ -118,11 +118,6 @@ int main()
 	char delimiter = '-';
 	char **result = ft_split(input_str, delimiter);
 
-	if (!result)
-	{
-		printf("Error al dividir la cadena.\n");
-		return 1;
-	}
 	print_string_array(result);
 	// Liberar memoria
 	int i = 0;

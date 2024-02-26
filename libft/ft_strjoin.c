@@ -6,7 +6,7 @@
 /*   By: danpalac <danpalac@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/19 10:56:53 by danpalac          #+#    #+#             */
-/*   Updated: 2024/02/08 11:52:25 by danpalac         ###   ########.fr       */
+/*   Updated: 2024/02/26 10:18:32 by danpalac         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,6 +44,8 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	size_t	total_len;
 	char	*ptr;
 
+	if (!s1 || !s2)
+		return (NULL);
 	len1 = ft_strlen(s1);
 	len2 = ft_strlen(s2);
 	total_len = len1 + len2;
@@ -60,7 +62,7 @@ int main()
     const char *cadena1 = "Hola, ";
     const char *cadena2 = "mundo!";
 
-    char *resultado = ft_strjoin(cadena1, cadena2);
+    char *resultado = ft_strjoin(NULL, NULL);
 
     printf("Cadena resultante: %s\n", resultado);
 

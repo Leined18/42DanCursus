@@ -6,7 +6,7 @@
 /*   By: danpalac <danpalac@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/12 17:23:45 by danpalac          #+#    #+#             */
-/*   Updated: 2024/01/18 12:46:56 by danpalac         ###   ########.fr       */
+/*   Updated: 2024/02/26 12:01:19 by danpalac         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,10 @@ int main()
 {
 	int c = 't';
 	char s[] = "baens trdes";
-	printf("%s",strchr(s,c));
-	return 0;
+	char *result;
+
+	result = strchr(NULL,'t');
+	printf("uno: %s\n",strchr(NULL,'t'));
+	//printf("dos: %s\n",result);
+	return (0);
 }*/

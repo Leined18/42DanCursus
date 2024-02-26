@@ -6,7 +6,7 @@
 /*   By: danpalac <danpalac@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/19 11:34:30 by danpalac          #+#    #+#             */
-/*   Updated: 2024/01/25 11:05:39 by danpalac         ###   ########.fr       */
+/*   Updated: 2024/02/26 12:14:24 by danpalac         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,16 +26,6 @@ static size_t	char_check(char const *str, char const c)
 		i++;
 	}
 	return (0);
-}
-
-static size_t	str_len(char const *str)
-{
-	size_t	i;
-
-	i = 0;
-	while (*(str + i))
-		i++;
-	return (i);
 }
 
 static char	*str_new(size_t n)
@@ -60,7 +50,7 @@ char	*ft_strtrim(char const *s1, char const *set)
 	start = 0;
 	while (*(s1 + start) && char_check(set, *(s1 + start)))
 		start++;
-	end = str_len(s1);
+	end = ft_strlen(s1);
 	while (end > start && char_check(set, *(s1 + (end - 1))))
 		end--;
 	trim = str_new(end - start);

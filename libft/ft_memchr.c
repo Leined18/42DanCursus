@@ -6,7 +6,7 @@
 /*   By: danpalac <danpalac@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/15 11:31:19 by danpalac          #+#    #+#             */
-/*   Updated: 2024/01/15 11:54:38 by danpalac         ###   ########.fr       */
+/*   Updated: 2024/02/26 12:11:23 by danpalac         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,6 @@ int main()
 {
 	char s[] = {0, 1, 2 ,3 ,4 ,5};
 
-	printf("%s\n", memchr(s, '0', 0));
-	printf("%s\n", ft_memchr(s, 2, 3));
+	printf("%s\n", memchr(NULL, 'G', 3));
+	printf("%s\n", ft_memchr(NULL, 'g', 3));
 }*/

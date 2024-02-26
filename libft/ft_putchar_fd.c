@@ -6,7 +6,7 @@
 /*   By: danpalac <danpalac@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/25 09:02:23 by danpalac          #+#    #+#             */
-/*   Updated: 2024/01/25 09:43:29 by danpalac         ###   ########.fr       */
+/*   Updated: 2024/02/26 12:22:29 by danpalac         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,13 +20,8 @@ void	ft_putchar_fd(char c, int fd)
 int main() {
     // Write C code here
     char c = 'a';
-    int i = 0;
 
-    while (i < sizeof(int) * sizeof(int))
-    {
-        ft_putchar_fd(c,1);
-        i++;
-    }
+    ft_putchar_fd(NULL,1);
 
     return 0;
 }*/

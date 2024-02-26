@@ -6,7 +6,7 @@
 /*   By: danpalac <danpalac@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/29 12:47:44 by danpalac          #+#    #+#             */
-/*   Updated: 2024/02/08 14:15:32 by danpalac         ###   ########.fr       */
+/*   Updated: 2024/02/26 10:15:08 by danpalac         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,10 +26,15 @@ t_list	*ft_lstnew(void *content)
 /*
 int main()
 {
-    t_list *list;
+    t_list	*list;
+	t_list	*list2;
+	int		lol[] = {1, 4, 5, 6};
 
-    list = ft_lstnew(list);
-    printf("%zu", sizeof(list));
+    list = ft_lstnew("buenas");
+    list2 = ft_lstnew(lol);
+    printf("%zu\n", sizeof(t_list));
+    printf("%s\n", list->content);
+    printf("%s\n", list2->content);
 	free(list);
-    return (0);
+	return (0);
 }*/

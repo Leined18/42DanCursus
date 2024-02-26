@@ -6,7 +6,7 @@
 /*   By: danpalac <danpalac@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/12 12:33:19 by danpalac          #+#    #+#             */
-/*   Updated: 2024/02/08 11:56:49 by danpalac         ###   ########.fr       */
+/*   Updated: 2024/02/26 11:59:47 by danpalac         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,12 +29,9 @@ size_t	ft_strlcpy(char *restrict dst, const char *restrict src, size_t dstsize)
 /*
 int main()
 {
-		int i;
-		scanf("%d", &i);	
-
-		char src[] = "nice to meeto you";
-		char dst[i];
-		printf("%zu\n%s", ft_strlcpy(dst, src, sizeof(dst)), dst);
+	char src[] = "nice to meeto you";
+	char dst[] = "buenas tardes";
+	printf("%zu\n%s", ft_strlcpy(dst, src, sizeof(dst)), dst);
 	
-		return (0);
+	return (0);
 }*/

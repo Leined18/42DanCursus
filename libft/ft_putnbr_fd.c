@@ -6,7 +6,7 @@
 /*   By: danpalac <danpalac@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/25 09:04:36 by danpalac          #+#    #+#             */
-/*   Updated: 2024/01/25 09:45:06 by danpalac         ###   ########.fr       */
+/*   Updated: 2024/02/26 12:24:41 by danpalac         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,7 @@ int main() {
 	// Write C code here
 	int i = 19999;
 
-	ft_putnbr_fd(i,1);
+	ft_putnbr_fd(NULL,1);
 
 	return 0;
 }*/
