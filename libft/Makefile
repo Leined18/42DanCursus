@@ -6,7 +6,7 @@
 #    By: danpalac <danpalac@student.42madrid>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/01/15 16:56:35 by danpalac          #+#    #+#              #
-#    Updated: 2024/02/16 10:58:00 by danpalac         ###   ########.fr        #
+#    Updated: 2024/02/26 15:47:01 by danpalac         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -29,17 +29,21 @@ SRCS    = ft_isalnum.c ft_isalpha.c ft_isascii.c ft_isdigit.c ft_isprint.c ft_bz
 OBJS		= $(SRCS:.c=.o) 
 OBJS_BONUS	= $(BONUS:.c=.o)
 
+BONUS_LIB	= .bonus
 all: $(NAME)
 
 $(NAME): $(OBJS)
 	$(AR) $(NAME) $(OBJS)
 	$(LIB) $(NAME)
 
-bonus: $(OBJS_BONUS)
-	$(AR) $(NAME) $(OBJS_BONUS) 
+$(BONUS_LIB) : $(OBJS_BONUS)
+	$(AR) $(NAME) $(OBJS_BONUS) $(OBJS)
+	touch .bonus
+
+bonus : $(BONUS_LIB)
 
 clean:
-	$(RM) $(OBJS) $(OBJS_BONUS)
+	$(RM) $(OBJS) $(OBJS_BONUS) $(BONUS_LIB)
 
 fclean: clean
 	$(RM) $(NAME)
