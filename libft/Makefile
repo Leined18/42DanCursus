@@ -36,7 +36,7 @@ $(NAME): $(OBJS)
 	$(AR) $(NAME) $(OBJS)
 	$(LIB) $(NAME)
 
-$(BONUS_LIB) : $(OBJS_BONUS)
+$(BONUS_LIB) : $(OBJS_BONUS) $(OBJS)
 	$(AR) $(NAME) $(OBJS_BONUS) $(OBJS)
 	touch .bonus
 
