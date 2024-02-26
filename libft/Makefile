@@ -10,12 +10,12 @@
 #                                                                              #
 # **************************************************************************** #
 
-NAME    = libft.a
-CC      = gcc
-CFLAGS  = -Wall -Wextra -Werror -g
-RM      = rm -rf
-AR      = ar rcs
-LIB     = ranlib
+NAME		= libft.a
+CC		= gcc
+CFLAGS		= -Wall -Wextra -Werror -g
+RM		= rm -rf
+AR		= ar rcs
+LIB		= ranlib
 
 BONUS	= ft_lstnew_bonus.c ft_lstadd_front_bonus.c ft_lstsize_bonus.c ft_lstlast_bonus.c ft_lstadd_back_bonus.c \
 		  ft_lstdelone_bonus.c ft_lstclear_bonus.c ft_lstiter_bonus.c ft_lstmap_bonus.c
@@ -28,22 +28,22 @@ SRCS    = ft_isalnum.c ft_isalpha.c ft_isascii.c ft_isdigit.c ft_isprint.c ft_bz
 
 OBJS		= $(SRCS:.c=.o) 
 OBJS_BONUS	= $(BONUS:.c=.o)
+NBONUS		= .bonus
 
-BONUS_LIB	= .bonus
 all: $(NAME)
 
 $(NAME): $(OBJS)
 	$(AR) $(NAME) $(OBJS)
 	$(LIB) $(NAME)
 
-$(BONUS_LIB) : $(OBJS_BONUS) $(OBJS)
-	$(AR) $(NAME) $(OBJS_BONUS) $(OBJS)
+$(NBONUS): $(OBJS_BONUS) $(NAME)
+	$(AR) $(NAME) $(OBJS_BONUS)
 	touch .bonus
 
-bonus : $(BONUS_LIB)
+bonus : $(NBONUS)
 
 clean:
-	$(RM) $(OBJS) $(OBJS_BONUS) $(BONUS_LIB)
+	$(RM) $(OBJS) $(OBJS_BONUS) $(NBONUS)
 
 fclean: clean
 	$(RM) $(NAME)
