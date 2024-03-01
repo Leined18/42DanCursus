@@ -2,7 +2,7 @@
 #                                DIRECTORIES                                   #
 # **************************************************************************** #
 
-SRCP = ./SRCS/*.c
+SRCP = ./
 SRCS_PRINTF = ft_printf.c
 SRCS = $(addprefix $(SRCP),$(SRCS_PRINTF))
 
@@ -27,20 +27,18 @@ AR			= ar rcs
 RM			= rm -f
 GCC			= gcc
 CFLAGS 		= -Wall -Wextra -Werror
-MKDIR		= mkdir
-
+MKDIR		= mkdir -p
 
 # **************************************************************************** #
 #                                   TARGETS                                    #
 # **************************************************************************** #
 
-all: $(OBJS_DIR) $(NAME)
+all: $(NAME) $(LIBFT_AR)
 
-$(OBJS_DIR):
-	$(MKDIR) -p $(OBJS_DIR)
 
-$(OBJS_DIR)/%.o: $(SRCP)%.c | $(OBJS_DIR)
-	$(GCC) $(CFLAGS) -c -I $(HEAD) $< -o $@
+$(OBJS_DIR)/%.o: $(SRCP)/%.c
+	$(MKDIR) $(OBJS_DIR)
+	$(GCC) $(CFLAGS) -c $< -o $@
 
 
 $(LIBFT_AR):
