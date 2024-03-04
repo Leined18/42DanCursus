@@ -3,8 +3,7 @@
 
 #include "libft.h"
 char **enter_new_string(char **p, size_t i);
-void free_memory(char **p, size_t size);
-void print_current_array(char **p, size_t x);
-int array_program(void);
-
+void free_memory(char **p);
+void print_current_array(char **p);
+char    **array_program(char **p);
 #endif
