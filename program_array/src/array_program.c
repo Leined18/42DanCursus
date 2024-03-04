@@ -108,6 +108,5 @@ char    **array_program(char **p)
     }
 
     print_current_array(p);
-    free_memory(p);
     return (p);
 }

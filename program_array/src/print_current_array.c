@@ -6,9 +6,7 @@ void print_current_array(char **p)
     printf("Current array:\n");
     size_t i = 0;
     while (p[i] != NULL) {
-        if (ft_strlen(p[i]) > 0) {
-            printf("%s,", p[i]);
-        }
+        printf("%s,", p[i]);
         i++;
     }
     printf("\n");
