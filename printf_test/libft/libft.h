@@ -6,7 +6,7 @@
 /*   By: danpalac <danpalac@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/18 11:43:02 by danpalac          #+#    #+#             */
-/*   Updated: 2024/03/06 14:22:46 by danpalac         ###   ########.fr       */
+/*   Updated: 2024/03/07 10:57:54 by danpalac         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,8 @@
 # include <stdlib.h>
 # include <stdint.h>
 # include <limits.h>
+# include <stdio.h>
+# include <string.h>
 
 /* ************************************************************************** */
 /*                                 STRUCT                                     */
@@ -55,8 +57,10 @@ void	*ft_memset(void *str, int c, size_t n);
 /*                                  PRINT                                     */
 /* ************************************************************************** */
 
-void	ft_putchar(int c);
-void	ft_putstr(char *s);
+int		ft_putaddress(void *format);
+int		ft_putchar(int c);
+int		ft_putstr(char const *s);
+int		ft_putnbr(int n);
 void	ft_putchar_fd(char c, int fd);
 void	ft_putendl_fd(char *s, int fd);
 void	ft_putnbr_fd(int n, int fd);
@@ -99,4 +103,9 @@ t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *));
 t_list	*ft_lstnew(void *content);
 int		ft_lstsize(t_list *lst);
 
+/* ************************************************************************** */
+/*                                 ADDITIONAL                                 */
+/* ************************************************************************** */
+
+long	ft_abs(long n);
 #endif

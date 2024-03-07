@@ -1,25 +1,41 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putchar.c                                       :+:      :+:    :+:   */
+/*   ft_putnbr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: danpalac <danpalac@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/03/07 10:20:13 by danpalac          #+#    #+#             */
-/*   Updated: 2024/03/07 10:20:33 by danpalac         ###   ########.fr       */
+/*   Created: 2024/03/07 10:25:28 by danpalac          #+#    #+#             */
+/*   Updated: 2024/03/07 10:25:48 by danpalac         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_putchar(int c)
+static int	ft_nbrlen(long n)
 {
-	ft_putchar_fd(c, 1);
-	return (1);
+	int	i;
+
+	if (n < 0)
+	{
+		n = ft_abs(n);
+		i = 1;
+	}
+	else
+		i = 0;
+	while (n >= 10)
+	{
+		n /= 10;
+		i++;
+	}
+	return (i + 1);
 }
-/*
-int main()
+
+int	ft_putnbr(int n)
 {
-	printf("%d\n", ft_putchar('g'));
-	return 0;
-}*/
+	int	nbr_len;
+
+	nbr_len = ft_nbrlen(n);
+	ft_putnbr_fd(n, 1);
+	return (nbr_len);
+}

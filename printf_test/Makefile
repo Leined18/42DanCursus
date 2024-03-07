@@ -1,52 +1,69 @@
-**************************************************************************** #
-#                                                                              #
-#                                                         :::      ::::::::    #
-#    Makefile                                           :+:      :+:    :+:    #
-#                                                     +:+ +:+         +:+      #
-#    By: danpalac <danpalac@student.42madrid>       +#+  +:+       +#+         #
-#                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2024/01/15 16:56:35 by danpalac          #+#    #+#              #
-#    Updated: 2024/03/06 14:26:39 by danpalac         ###   ########.fr        #
-#                                                                              #
+# **************************************************************************** #
+#                                DIRECTORIES                                   #
 # **************************************************************************** #
 
-NAME		= libft.a
-CC		= gcc
-CFLAGS		= -Wall -Wextra -Werror -g
-RM		= rm -rf
-AR		= ar rcs
-LIB		= ranlib
+SRCP = ./
+SRCS_PRINTF = ft_printf.c
+SRCS = $(addprefix $(SRCP),$(SRCS_PRINTF))
 
-BONUS	= ft_lstnew_bonus.c ft_lstadd_front_bonus.c ft_lstsize_bonus.c ft_lstlast_bonus.c ft_lstadd_back_bonus.c \
-		  ft_lstdelone_bonus.c ft_lstclear_bonus.c ft_lstiter_bonus.c ft_lstmap_bonus.c
+OBJS = $(SRCS:.c=.o)
 
-SRCS    = ft_isalnum.c ft_isalpha.c ft_isascii.c ft_isdigit.c ft_isprint.c ft_bzero.c ft_calloc.c \
-			ft_memchr.c ft_memcmp.c ft_memcpy.c ft_memmove.c ft_memset.c ft_putchar_fd.c ft_putendl_fd.c \
-			ft_putnbr_fd.c ft_putstr_fd.c ft_atoi.c ft_itoa.c ft_split.c ft_strchr.c ft_strdup.c \
-			ft_striteri.c ft_strjoin.c ft_strlcat.c ft_strlcpy.c ft_strlen.c ft_strmapi.c ft_strncmp.c \
-			ft_strnstr.c ft_strrchr.c ft_strtrim.c ft_substr.c ft_tolower.c ft_toupper.c
+HEAD = ./
 
-OBJS		= $(SRCS:.c=.o) 
-OBJS_BONUS	= $(BONUS:.c=.o)
-NBONUS		= .bonus
+# **************************************************************************** #
+#                                    LIBFT                                     #
+# **************************************************************************** #
 
-all: $(NAME)
+LIBFT_DIR = ./libft/
+LIBFT = libft.a
+LIBFT_AR = $(addprefix $(LIBFT_DIR), $(LIBFT))
 
-$(NAME): $(OBJS)
-	$(AR) $(NAME) $(OBJS)
-	$(LIB) $(NAME)
+# **************************************************************************** #
+#                                  VARIABLES                                   #
+# **************************************************************************** #
 
-$(NBONUS): $(OBJS_BONUS) $(NAME)
-	$(AR) $(NAME) $(OBJS_BONUS)
-	touch .bonus
+NAME		= libftprintf.a
+AR			= ar rcs
+RM			= rm -f
+GCC			= gcc
+CFLAGS 		= -Wall -Wextra -Werror
 
-bonus : $(NBONUS)
+RESET		= \033[0m
+BOLD		= \033[1m
+RED			= \033[31m
+GREEN		= \033[32m
+YELLOW		= \033[33m
+BLUE		= \033[34m
+
+# **************************************************************************** #
+#                                   TARGETS                                    #
+# **************************************************************************** #
+
+all: $(NAME) $(LIBFT_AR)
+
+$(OBJS): %.o: %.c
+	$(GCC) $(CFLAGS) -c -I $(HEAD) $< -o $@
+
+$(LIBFT_AR):
+	@make -C $(LIBFT_DIR)
+
+$(NAME): $(OBJS) $(LIBFT_AR)
+	cp $(LIBFT_AR) $(NAME)
+	@if $(AR) $@ $^; then \
+		echo "$(GREEN)$(BOLD)SUCCESS$(RESET)"; \
+		echo "$(BLUE)Created: $(words $(OBJS) $(LIBFT_AR)) Oject File/s$(RESET)"; \
+		echo "$(BLUE)Created: $(NAME)$(RESET)"; \
+	fi
 
 clean:
-	$(RM) $(OBJS) $(OBJS_BONUS) $(NBONUS)
+	@make fclean -C $(LIBFT_DIR)
+	@$(RM) $(OBJS)
+	@echo "$(GREEN)$(BOLD)SUCCESS$(RESET)"
+	@echo "$(BLUE)Removed: $(words $(OBJS)) Oject File/s$(RESET)"
 
 fclean: clean
-	$(RM) $(NAME)
+	@$(RM) $(NAME)
+	@echo "$(BLUE)Removed: $(NAME)$(RESET)"
 
 re: fclean all
 

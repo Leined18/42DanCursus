@@ -1,3 +1,4 @@
+
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
@@ -12,17 +13,15 @@
 
 #include "libft.h"
 
-void	ft_putstr(char *s)
+int	ft_putstr(char const *s)
 {
-	while (*s)
-	{
-		ft_putchar(*s);
-		s++;
-	}
+	if (!s)
+		return (write(1, "(null)", 6));
+	return (write(1, s, ft_strlen(s)));
 }
-
+/*
 int main()
 {
 	ft_putstr("adios");
 	return 0;
-}
+}*/
