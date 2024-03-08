@@ -6,7 +6,7 @@
 /*   By: danpalac <danpalac@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/07 12:02:45 by danpalac          #+#    #+#             */
-/*   Updated: 2024/03/07 12:11:59 by danpalac         ###   ########.fr       */
+/*   Updated: 2024/03/08 13:36:58 by danpalac         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,8 @@ static int	ft_format(va_list args, const char format)
 	}
 	else if (format == 'u')
 		return (ft_putunsigned(va_arg(args, unsigned int)));
+	else if (format == 'X' || format == 'x')
+		return (ft_puthexa(va_arg(args, int), format));
 	else if (format == '%')
 		return (ft_putchar('%'));
 	else
@@ -60,29 +62,31 @@ int	ft_printf(const char *str, ...)
 	va_end(args);
 	return (length);
 }
-
+/*
 int main(void)
 {
+	void	*p;
+	char	s[] = "buenas";
 
+	p = s;
 	ft_printf("total de caracteres :%d\n", ft_printf("Caraacter : %c\n", 'a') +
     ft_printf("Cadena : %s\n", "cadena") +
-    ft_printf("Dirección : %p\n", (void *)0x123456) +
+    ft_printf("Dirección : %p\n", p) +
     ft_printf("Numero Decimal: %d\n", 123) +
     ft_printf("Número entero : %i\n", 123)+
     ft_printf("Número sin signo : %u\n", 123)+
-    ft_printf("Numero exadecimal en minuscula : %x\n", 0xabc)+ // Usar números en hexadecimal.
-    ft_printf("Número exadecimal en mayuscula : %X\n", 0xABC)); // Usar números en hexadecimal.
+    ft_printf("Numero exadecimal en minuscula : %x\n", 40)+
+	ft_printf("Número exadecimal en mayuscula : %X\n", 60)); 
 
 	ft_printf("\nMI FUNCION\n!!!!!!!!!!SEPARADOR¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡\nORIGINAL\n");
 
 	printf("Printed Caracters :%d\n",printf("\nCaracter : %c\n", 'a')+
     printf("Cadena : %s\n", "cadena")+
-    printf("Dirección : %p\n", (void *)0x123456)+
+    printf("Dirección : %p\n", p)+
     printf("Numero Decimal : %d\n", 123)+
     printf("Número entero : %i\n", 123)+
     printf("Número sin signo : %u\n", 123)+
-    printf("Numero exadecimal en minuscula : %x\n", 0xabc)+ // Usar números en hexadecimal.
-    printf("Número exadecimal en mayuscula : %X\n", 0xABC)); // Usar números en hexadecimal.
-
+    printf("Numero exadecimal en minuscula : %x\n", 40)+ 
+    printf("Número exadecimal en mayuscula : %X\n", 60));
     return (0);
-}
+}*/

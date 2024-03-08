@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_putunsigned.c                                   :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: danpalac <danpalac@student.42madrid>       +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/03/08 13:38:23 by danpalac          #+#    #+#             */
+/*   Updated: 2024/03/08 13:38:54 by danpalac         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "libft.h"
 
 int	ft_putunsigned(unsigned long n)
@@ -9,7 +21,7 @@ int	ft_putunsigned(unsigned long n)
 	base = "0123456789";
 	if (n > (ft_strlen(base) - 1))
 		len += ft_putunsigned(n / ft_strlen(base));
-    len += ft_putchar(*(base + (n % ft_strlen(base))));
+	len += ft_putchar(*(base + (n % ft_strlen(base))));
 	return (len);
 }
 /*

@@ -57,7 +57,7 @@ $(NAME): $(OBJS) $(LIBFT_AR)
 
 clean:
 	@make fclean -C $(LIBFT_DIR)
-	@$(RM) $(OBJS)
+	@$(RM) $(OBJS) a.out
 	@echo "$(GREEN)$(BOLD)SUCCESS$(RESET)"
 	@echo "$(BLUE)Removed: $(words $(OBJS)) Oject File/s$(RESET)"
 
