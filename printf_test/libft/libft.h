@@ -57,6 +57,7 @@ void	*ft_memset(void *str, int c, size_t n);
 /*                                  PRINT                                     */
 /* ************************************************************************** */
 
+int		ft_putunsigned(unsigned long n);
 int		ft_putaddress(void *format);
 int		ft_putchar(int c);
 int		ft_putstr(char const *s);
