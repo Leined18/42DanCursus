@@ -51,19 +51,21 @@ $(NAME): $(OBJS) $(LIBFT_AR)
 	cp $(LIBFT_AR) $(NAME)
 	@if $(AR) $@ $^; then \
 		echo "$(GREEN)$(BOLD)SUCCESS$(RESET)"; \
-		echo "$(BLUE)Created: $(words $(OBJS) $(LIBFT_AR)) Oject File/s$(RESET)"; \
-		echo "$(BLUE)Created: $(NAME)$(RESET)"; \
+		echo "$(BLUE)Created: $(words $(OBJS) $(LIBFT_AR)) File/s [.o/.a] $(RESET)"; \
+		echo "$(BLUE)Created: $(NAME)"; \
+		echo "$(BLUE)Created: $(OBJS)$(RESET)"; \
 	fi
 
 clean:
 	@make fclean -C $(LIBFT_DIR)
 	@$(RM) $(OBJS) a.out
 	@echo "$(GREEN)$(BOLD)SUCCESS$(RESET)"
-	@echo "$(BLUE)Removed: $(words $(OBJS)) Oject File/s$(RESET)"
+	@echo "$(YELLOW)Removed: $(words $(OBJS) $(NAME)) File/s [.o/.a] $(RESET)"
+	@echo "$(YELLOW)Removed: $(RED)$(OBJS)"
 
 fclean: clean
 	@$(RM) $(NAME)
-	@echo "$(BLUE)Removed: $(NAME)$(RESET)"
+	@echo "$(YELLOW)Removed: $(RED)$(NAME)$(RESET)"
 
 re: fclean all
 

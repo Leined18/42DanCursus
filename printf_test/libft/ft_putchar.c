@@ -14,12 +14,13 @@
 
 int	ft_putchar(int c)
 {
-	ft_putchar_fd(c, 1);
+	if (write(1, &c, 1) == -1)
+		return (-1);
 	return (1);
 }
 /*
 int main()
 {
-	printf("%d\n", ft_putchar('g'));
+	printf("%d\n", ft_putchar(NULL));
 	return 0;
 }*/
