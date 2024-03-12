@@ -6,7 +6,7 @@
 #    By: danpalac <danpalac@student.42madrid>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/01/15 16:56:35 by danpalac          #+#    #+#              #
-#    Updated: 2024/03/07 10:27:03 by danpalac         ###   ########.fr        #
+#    Updated: 2024/03/11 15:15:51 by danpalac         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -40,7 +40,7 @@ SRCS    = ft_isalnum.c ft_isalpha.c ft_isascii.c ft_isdigit.c ft_isprint.c ft_bz
 			ft_putnbr_fd.c ft_putstr_fd.c ft_atoi.c ft_itoa.c ft_split.c ft_strchr.c ft_strdup.c \
 			ft_striteri.c ft_strjoin.c ft_strlcat.c ft_strlcpy.c ft_strlen.c ft_strmapi.c ft_strncmp.c \
 			ft_strnstr.c ft_strrchr.c ft_strtrim.c ft_substr.c ft_tolower.c ft_toupper.c ft_putchar.c ft_putstr.c\
-			ft_putnbr.c ft_abs.c ft_putaddress.c ft_putunsigned.c ft_puthexa.c
+			ft_putnbr.c ft_abs.c ft_putaddress.c ft_putunsigned.c ft_puthexa.c ft_putbase_fd.c
 
 
 # **************************************************************************** #

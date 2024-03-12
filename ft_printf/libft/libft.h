@@ -6,7 +6,7 @@
 /*   By: danpalac <danpalac@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/18 11:43:02 by danpalac          #+#    #+#             */
-/*   Updated: 2024/03/07 10:57:54 by danpalac         ###   ########.fr       */
+/*   Updated: 2024/03/11 15:21:03 by danpalac         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,6 +57,7 @@ void	*ft_memset(void *str, int c, size_t n);
 /*                                  PRINT                                     */
 /* ************************************************************************** */
 
+void	ft_putbase_fd(int nbr, const char *base, int fd);
 int		ft_puthexa(unsigned long n, char format);
 int		ft_putunsigned(unsigned long n);
 int		ft_putaddress(void *format);
