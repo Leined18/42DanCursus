@@ -6,33 +6,37 @@
 /*   By: danpalac <danpalac@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/07 12:02:45 by danpalac          #+#    #+#             */
-/*   Updated: 2024/03/07 12:11:59 by danpalac         ###   ########.fr       */
+/*   Updated: 2024/03/12 15:13:54 by danpalac         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int	format(va_list args, char *str)
+static int	ft_format(va_list args, const char format)
 {
-	int		result;
 	void	*p;
 
-	result = 0;
-	if (*str == 'd')
-		result += ft_putnbr(va_arg(args, int));
-	else if (*str == 'c')
-		result += ft_putchar(va_arg(args, int));
-	else if (*str == 's')
-		result += ft_putstr(va_arg(args, char *));
-	else if (*str == 'p')
+	if (format == 'd' || format == 'i')
+		return (ft_putnbr(va_arg(args, int)));
+	else if (format == 'c')
+		return (ft_putchar(va_arg(args, int)));
+	else if (format == 's')
+		return (ft_putstr(va_arg(args, char *)));
+	else if (format == 'p')
 	{
 		p = va_arg(args, void *);
 		if (p)
-			result += ft_putaddress(p);
-		else
-			result += ft_putstr("0x0");
+			return (ft_putaddress(p));
+		return (ft_putstr("0x0"));
 	}
-	return (result);
+	else if (format == 'u')
+		return (ft_putunsigned(va_arg(args, unsigned int)));
+	else if (format == 'X' || format == 'x')
+		return (ft_puthexa(va_arg(args, int), format));
+	else if (format == '%')
+		return (ft_putchar('%'));
+	else
+		return (-1);
 }
 
 int	ft_printf(const char *str, ...)
@@ -41,18 +45,20 @@ int	ft_printf(const char *str, ...)
 	int		i;
 	int		length;
 
+	if (!str)
+		return (-1);
 	i = 0;
 	length = 0;
 	va_start(args, str);
-	while (str[i] != '\0')
+	while (*(str + i))
 	{
-		if (str[i] == '%' && ft_strchr("cdspxX%", str[i + 1]))
+		if (*(str + i) == '%' && ft_strchr("cspdiuxX%", *(str + i + 1)))
 		{
-			length += format(args, (char *)&str[++i]);
+			length += ft_format(args, *(str + i + 1));
 			i++;
 		}
 		else
-			length += ft_putchar(str[i]);
+			length += ft_putchar(*(str + i));
 		i++;
 	}
 	va_end(args);
@@ -61,11 +67,14 @@ int	ft_printf(const char *str, ...)
 /*
 int main(void)
 {
-    int value = 42;
-    char *text = "Hello, World!";
+	void	*p;
+	char	s[] = "buenas";
 
-    int printed_chars = ft_printf("Value: %d, Text: %s\n", value, text);
-    ft_printf("Characters printed: %d\n", printed_chars);
+	p = s;
+	ft_printf("%d", ft_printf("\001\002\007\v\010\f\r\n"));
 
+	ft_printf("\nMI FUNCION\n!!!!!!!!!!SEPARADOR¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡\nORIGINAL\n");
+
+	printf("%d", printf("\001\002\007\v\010\f\r\n"));
     return (0);
 }*/
